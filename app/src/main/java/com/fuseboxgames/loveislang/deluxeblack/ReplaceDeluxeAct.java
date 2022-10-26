@@ -88,6 +88,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
 
             @Override
             public void onConversionDataFail(String errorMessage) {
+                stMain = "null";
             }
 
             @Override
