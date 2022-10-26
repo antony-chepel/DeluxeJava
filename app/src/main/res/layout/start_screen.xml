@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/bg_deluxe"
+    android:background="@drawable/bg_deluxe"
     android:layout_height="match_parent">
 
     <ImageView
@@ -14,14 +14,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/deluxe_item" />
+        app:srcCompat="@drawable/main_deluxe" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Choose your desired bonus points"
+        android:text="Discover the secret artifacts bonus"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -33,7 +33,8 @@
         android:id="@+id/b_more_deluxe"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="More than 500"
+        android:text="More than 500 points"
+        android:backgroundTint="@color/pb_del_clr"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +46,8 @@
         android:id="@+id/b_less_deluxe"
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="Less than 200"
+        android:text="Less than 200 points"
+        android:backgroundTint="@color/pb_del_clr"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

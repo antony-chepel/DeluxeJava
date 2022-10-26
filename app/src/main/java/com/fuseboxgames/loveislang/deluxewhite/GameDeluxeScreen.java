@@ -19,7 +19,7 @@ import java.util.Arrays;
 public class GameDeluxeScreen extends AppCompatActivity {
     Integer progressDeluxeData = 0;
     Integer bonusDelux = 2;
-    Integer timerDeluxe = 0;
+    Integer timerDeluxe = 20;
     CountDownTimer pbDeluxeTime;
 
     TextView tvTimer;
@@ -82,7 +82,7 @@ public class GameDeluxeScreen extends AppCompatActivity {
         if(pbDeluxeTime != null) {
             pbDeluxeTime.cancel();
         }
-        pbDeluxeTime = new CountDownTimer(10000,1000) {
+        pbDeluxeTime = new CountDownTimer(20000,1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
@@ -98,8 +98,8 @@ public class GameDeluxeScreen extends AppCompatActivity {
             @Override
             public void onFinish() {
                 if(timerDeluxe == 0){
-                    timerDeluxe = 15;
                     startActivity(new Intent(getApplicationContext(),ResDeluxeActivity.class));
+                    timerDeluxe = 15;
                 }
             }
         }.start();

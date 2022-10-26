@@ -20,8 +20,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 public class ReplaceDeluxeAct extends AppCompatActivity {
-    public static final String C_STR1 = "cstR1";
-    private static final String AF_DEV_KEY = "DkUz92ReUG3rBQni5Vvo2W";
+    public static final String LDOSFKFDKKDF = "cstR1";
+    private static final String RTDSJJDSJJDSJA = "DkUz92ReUG3rBQni5Vvo2W";
 
     String stMain;
 
@@ -31,10 +31,10 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
         setContentView(R.layout.activity_replace);
         final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(() -> {
-            String hawkI = Hawk.get(C_STR1);
+            String hawkI = Hawk.get(LDOSFKFDKKDF);
             if (hawkI != null) {
                 Log.d("TestInUIHawk", hawkI);
-                teleport();
+                osdpdsksdksakkd();
                 executorService.shutdown();
                 finish();
             } else {
@@ -43,15 +43,15 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
         }, 0, 2, TimeUnit.SECONDS);
 
 
-        appsflyer();
+        ttsduusdjsdjsdj();
 
-        SharedPreferences prefs = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
-        if (prefs.getBoolean("activity_exec", false)) {
+        SharedPreferences osdiisdjsdjjsd = getSharedPreferences("ActivityPREF", Context.MODE_PRIVATE);
+        if (osdiisdjsdjjsd.getBoolean("activity_exec", false)) {
             Intent intent = new Intent(this, FilterDeluxe.class);
             startActivity(intent);
             finish();
         } else {
-            SharedPreferences.Editor exec = prefs.edit();
+            SharedPreferences.Editor exec = osdiisdjsdjjsd.edit();
             exec.putBoolean("activity_exec", true);
             exec.apply();
         }
@@ -59,7 +59,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
 
 
 
-    public void teleport() {
+    public void osdpdsksdksakkd() {
 
         Intent intent = new Intent(ReplaceDeluxeAct.this, FilterDeluxe.class);
         startActivity(intent);
@@ -67,7 +67,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
         finish();
     }
 
-    public void appsflyer() {
+    public void ttsduusdjsdjsdj() {
         AppsFlyerConversionListener conversionListener = new AppsFlyerConversionListener() {
 
             @Override
@@ -81,7 +81,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
                 } else {
                     stMain = (String) conversionData.get("campaign");
                 }
-                Hawk.put(C_STR1, stMain);
+                Hawk.put(LDOSFKFDKKDF, stMain);
                 Log.d("NAMING TEST", "campaign attributed: " + stMain);
             }
 
@@ -100,7 +100,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
 
         };
 
-        AppsFlyerLib.getInstance().init(AF_DEV_KEY, conversionListener, this);
+        AppsFlyerLib.getInstance().init(RTDSJJDSJJDSJA, conversionListener, this);
         AppsFlyerLib.getInstance().start(this);
         AppsFlyerLib.getInstance().setDebugLog(true);
 

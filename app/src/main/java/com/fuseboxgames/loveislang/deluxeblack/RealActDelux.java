@@ -1,8 +1,8 @@
 package com.fuseboxgames.loveislang.deluxeblack;
 
-import static com.fuseboxgames.loveislang.deluxeblack.AppClassDeluxe.FUNC_ID;
-import static com.fuseboxgames.loveislang.deluxeblack.MainActivity.DLNK1;
-import static com.fuseboxgames.loveislang.deluxeblack.ReplaceDeluxeAct.C_STR1;
+import static com.fuseboxgames.loveislang.deluxeblack.AppClassDeluxe.KDOSDLFLFDLSLFD;
+import static com.fuseboxgames.loveislang.deluxeblack.MainActivity.KIDODOFODFO;
+import static com.fuseboxgames.loveislang.deluxeblack.ReplaceDeluxeAct.LDOSFKFDKKDF;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -39,15 +39,15 @@ import java.io.File;
 import java.io.IOException;
 
 public class RealActDelux extends AppCompatActivity {
-    private static final String TAG = RealActDelux.class.getSimpleName();
-    private static final int FILECHOOSER_RESULTCODE = 1;
-    private ValueCallback<Uri> mUploadMessage;
-    private Uri mCapturedImageURI = null;
+    private static final String HUDIFISIDF = RealActDelux.class.getSimpleName();
+    private static final int RDTSYFYDFYFYSDYF = 1;
+    private ValueCallback<Uri> ksidooasdosd;
+    private Uri dlsdofofdpsfdp = null;
 
 
-    private ValueCallback<Uri[]> mFilePathCallback;
-    private String mCameraPhotoPath;
-    WebView viewMainMain;
+    private ValueCallback<Uri[]> rtddyuusufusudf;
+    private String bhidfoslsfdlfds;
+    WebView trfdstdfuusdfuf;
 
 
     @SuppressLint("MissingInflatedId")
@@ -56,11 +56,17 @@ public class RealActDelux extends AppCompatActivity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_real);
-        viewMainMain = findViewById(R.id.realView);
+        trfdstdfuusdfuf = findViewById(R.id.realView);
 
-        WebSettings webSettings = viewMainMain.getSettings();
+        WebSettings webSettings = trfdstdfuusdfuf.getSettings();
 
         webSettings.setJavaScriptEnabled(true);
+
+
+        webSettings.setPluginState(WebSettings.PluginState.ON);
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+        webSettings.setAppCacheEnabled(true);
+
 
         webSettings.setUseWideViewPort(true);
         webSettings.setUserAgentString(webSettings.getUserAgentString().replace("; wv", ""));
@@ -76,20 +82,16 @@ public class RealActDelux extends AppCompatActivity {
         webSettings.setBuiltInZoomControls(true);
         webSettings.setSupportZoom(true);
 
-        webSettings.setPluginState(WebSettings.PluginState.ON);
-        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
-        webSettings.setAppCacheEnabled(true);
-
 
         webSettings.setAllowContentAccess(true);
 
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
-        cookieManager.setAcceptThirdPartyCookies(viewMainMain,true);
+        cookieManager.setAcceptThirdPartyCookies(trfdstdfuusdfuf,true);
 
 
         final Activity activity = this;
-        viewMainMain.setWebViewClient(new WebViewClient() {
+        trfdstdfuusdfuf.setWebViewClient(new WebViewClient() {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -104,10 +106,10 @@ public class RealActDelux extends AppCompatActivity {
                 super.onPageFinished(view, url);
 
 
-                if(viewMainMain.getProgress() == 100) {
-                    viewMainMain.setVisibility(View.VISIBLE);
+                if(trfdstdfuusdfuf.getProgress() == 100) {
+                    trfdstdfuusdfuf.setVisibility(View.VISIBLE);
 //                    animationView.setVisibility(View.INVISIBLE);
-                    saveUrl(url);
+                    osdppdasppdasdp(url);
                 }
             }
 
@@ -117,112 +119,112 @@ public class RealActDelux extends AppCompatActivity {
         });
 
 
-        viewMainMain.loadUrl(getUrl());
+        trfdstdfuusdfuf.loadUrl(osapdpdpspasdppdas());
 
         String permission = Manifest.permission.CAMERA;
-        int grant = ContextCompat.checkSelfPermission(this, permission);
-        if (grant != PackageManager.PERMISSION_GRANTED) {
+        int hdudsiifi = ContextCompat.checkSelfPermission(this, permission);
+        if (hdudsiifi != PackageManager.PERMISSION_GRANTED) {
             String[] permission_list = new String[1];
             permission_list[0] = permission;
             ActivityCompat.requestPermissions(this, permission_list, 1);
         }
 
-        viewMainMain.setWebChromeClient(new WebChromeClient() {
+        trfdstdfuusdfuf.setWebChromeClient(new WebChromeClient() {
 
 
             public boolean onShowFileChooser(
                     WebView webView, ValueCallback<Uri[]> filePathCallback,
                     WebChromeClient.FileChooserParams fileChooserParams) {
-                if (mFilePathCallback != null) {
-                    mFilePathCallback.onReceiveValue(null);
+                if (rtddyuusufusudf != null) {
+                    rtddyuusufusudf.onReceiveValue(null);
                 }
-                mFilePathCallback = filePathCallback;
+                rtddyuusufusudf = filePathCallback;
 
-                Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                Intent ldsofiidfsi = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                if (ldsofiidfsi.resolveActivity(getPackageManager()) != null) {
 
                     // create the file where the photo should go
-                    File photoFile = null;
+                    File tdyfusudfsu = null;
                     try {
-                        photoFile = createImageFile();
-                        takePictureIntent.putExtra("PhotoPath", mCameraPhotoPath);
+                        tdyfusudfsu = tsrdasydsajsdajsd();
+                        ldsofiidfsi.putExtra("PhotoPath", bhidfoslsfdlfds);
                     } catch (IOException ex) {
                         // Error occurred while creating the File
-                        Log.e(TAG, "Unable to create Image File", ex);
+                        Log.e(HUDIFISIDF, "Unable to create Image File", ex);
                     }
 
                     // continue only if the file was successfully created
-                    if (photoFile != null) {
-                        mCameraPhotoPath = "file:" + photoFile.getAbsolutePath();
-                        takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT,
-                                Uri.fromFile(photoFile));
+                    if (tdyfusudfsu != null) {
+                        bhidfoslsfdlfds = "file:" + tdyfusudfsu.getAbsolutePath();
+                        ldsofiidfsi.putExtra(MediaStore.EXTRA_OUTPUT,
+                                Uri.fromFile(tdyfusudfsu));
                     } else {
-                        takePictureIntent = null;
+                        ldsofiidfsi = null;
                     }
                 }
 
-                Intent contentSelectionIntent = new Intent(Intent.ACTION_GET_CONTENT);
-                contentSelectionIntent.addCategory(Intent.CATEGORY_OPENABLE);
-                contentSelectionIntent.setType("image/*");
+                Intent ldodpfspfdsofdo = new Intent(Intent.ACTION_GET_CONTENT);
+                ldodpfspfdsofdo.addCategory(Intent.CATEGORY_OPENABLE);
+                ldodpfspfdsofdo.setType("image/*");
 
-                Intent[] intentArray;
-                if (takePictureIntent != null) {
-                    intentArray = new Intent[]{takePictureIntent};
+                Intent[] redsyfdysdfy;
+                if (ldsofiidfsi != null) {
+                    redsyfdysdfy = new Intent[]{ldsofiidfsi};
                 } else {
-                    intentArray = new Intent[0];
+                    redsyfdysdfy = new Intent[0];
                 }
 
-                Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
-                chooserIntent.putExtra(Intent.EXTRA_INTENT, contentSelectionIntent);
-                chooserIntent.putExtra(Intent.EXTRA_TITLE, getString(R.string.image_chooser));
-                chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, intentArray);
+                Intent podsfkfsdkkfd = new Intent(Intent.ACTION_CHOOSER);
+                podsfkfsdkkfd.putExtra(Intent.EXTRA_INTENT, ldodpfspfdsofdo);
+                podsfkfsdkkfd.putExtra(Intent.EXTRA_TITLE, getString(R.string.image_chooser));
+                podsfkfsdkkfd.putExtra(Intent.EXTRA_INITIAL_INTENTS, redsyfdysdfy);
 
-                startActivityForResult(chooserIntent, FILECHOOSER_RESULTCODE);
+                startActivityForResult(podsfkfsdkkfd, RDTSYFYDFYFYSDYF);
 
                 return true;
             }
 
             // creating image files (Lollipop only)
-            private File createImageFile() throws IOException {
+            private File tsrdasydsajsdajsd() throws IOException {
 
-                File imageStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "DirectoryNameHere");
+                File giuidsiadsi = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "DirectoryNameHere");
 
-                if (!imageStorageDir.exists()) {
-                    imageStorageDir.mkdirs();
+                if (!giuidsiadsi.exists()) {
+                    giuidsiadsi.mkdirs();
                 }
 
                 // create an image file name
-                imageStorageDir = new File(imageStorageDir + File.separator + "IMG_" + String.valueOf(System.currentTimeMillis()) + ".jpg");
-                return imageStorageDir;
+                giuidsiadsi = new File(giuidsiadsi + File.separator + "IMG_" + String.valueOf(System.currentTimeMillis()) + ".jpg");
+                return giuidsiadsi;
             }
 
             // openFileChooser for Android 3.0+
-            public void openFileChooser(ValueCallback<Uri> uploadMsg, String acceptType) {
-                mUploadMessage = uploadMsg;
+            public void ldfjjfdjfsdjjdf(ValueCallback<Uri> uploadMsg, String acceptType) {
+                ksidooasdosd = uploadMsg;
 
                 try {
-                    File imageStorageDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "DirectoryNameHere");
+                    File rtwdwquwduuqwdu = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "DirectoryNameHere");
 
-                    if (!imageStorageDir.exists()) {
-                        imageStorageDir.mkdirs();
+                    if (!rtwdwquwduuqwdu.exists()) {
+                        rtwdwquwduuqwdu.mkdirs();
                     }
 
-                    File file = new File(imageStorageDir + File.separator + "IMG_" + String.valueOf(System.currentTimeMillis()) + ".jpg");
+                    File file = new File(rtwdwquwduuqwdu + File.separator + "IMG_" + String.valueOf(System.currentTimeMillis()) + ".jpg");
 
-                    mCapturedImageURI = Uri.fromFile(file); // save to the private variable
+                    dlsdofofdpsfdp = Uri.fromFile(file); // save to the private variable
 
-                    final Intent captureIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
-                    captureIntent.putExtra(MediaStore.EXTRA_OUTPUT, mCapturedImageURI);
+                    final Intent wddwqdwq = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                    wddwqdwq.putExtra(MediaStore.EXTRA_OUTPUT, dlsdofofdpsfdp);
                     //captureIntent.putExtra(MediaStore.EXTRA_SCREEN_ORIENTATION, ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-                    Intent i = new Intent(Intent.ACTION_GET_CONTENT);
-                    i.addCategory(Intent.CATEGORY_OPENABLE);
-                    i.setType("image/*");
+                    Intent jjsadjsdkakds = new Intent(Intent.ACTION_GET_CONTENT);
+                    jjsadjsdkakds.addCategory(Intent.CATEGORY_OPENABLE);
+                    jjsadjsdkakds.setType("image/*");
 
-                    Intent chooserIntent = Intent.createChooser(i, getString(R.string.image_chooser));
-                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Parcelable[]{captureIntent});
+                    Intent chooserIntent = Intent.createChooser(jjsadjsdkakds, getString(R.string.image_chooser));
+                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS, new Parcelable[]{wddwqdwq});
 
-                    startActivityForResult(chooserIntent, FILECHOOSER_RESULTCODE);
+                    startActivityForResult(chooserIntent, RDTSYFYDFYFYSDYF);
                 } catch (Exception e) {
                     Toast.makeText(getBaseContext(), "Camera Exception:" + e, Toast.LENGTH_LONG).show();
                 }
@@ -233,38 +235,38 @@ public class RealActDelux extends AppCompatActivity {
 
     }
 
-    public void saveUrl(String url) {
-        SharedPreferences sp = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
+    public void osdppdasppdasdp(String url) {
+        SharedPreferences ksodlsdalsd = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE);
+        SharedPreferences.Editor editor = ksodlsdalsd.edit();
         editor.putString("SAVED_URL", url);
         editor.apply();
     }
 
-    public String getUrl(){
+    public String osapdpdpspasdppdas(){
 
 
-        String  cstr1, main_id, dlnk1, paket;
+        String  tysduauasdusd, vjsodaisdiisd, psoadosdksdk, rsaydhjsdjjs;
 
-        String one, two, three, four, five, six;
+        String rsyudysdyuyuds, psoosdosdo, rstadyydys, psododoassdo, tshdhsdh, podiidaisi;
 
         SharedPreferences sp_p = getSharedPreferences("SP_WEBVIEW_PREFS", MODE_PRIVATE);
 
 
-        cstr1 = Hawk.get(C_STR1);
-        dlnk1 = Hawk.get(DLNK1);
-        main_id = Hawk.get(FUNC_ID);
-        paket = "com.fuseboxgames.loveislang";
+        tysduauasdusd = Hawk.get(LDOSFKFDKKDF);
+        psoadosdksdk = Hawk.get(KIDODOFODFO);
+        vjsodaisdiisd = Hawk.get(KDOSDLFLFDLSLFD);
+        rsaydhjsdjjs = "com.fuseboxgames.loveislang";
         String afId = AppsFlyerLib.getInstance().getAppsFlyerUID(this);
         AppsFlyerLib.getInstance().setCollectAndroidID(true);
         String androidVersion = Build.VERSION.RELEASE;
 
 
-        one = "sub_id_1=";
-        two = "deviceID=";
-        three = "ad_id=";
-        four = "sub_id_4=";
-        five = "sub_id_5=";
-        six = "sub_id_6=";
+        rsyudysdyuyuds = "sub_id_1=";
+        psoosdosdo = "deviceID=";
+        rstadyydys = "ad_id=";
+        psododoassdo = "sub_id_4=";
+        tshdhsdh = "sub_id_5=";
+        podiidaisi = "sub_id_6=";
 
 
         String first1 = "http://";
@@ -273,12 +275,12 @@ public class RealActDelux extends AppCompatActivity {
 
         String fff;
 
-        if (!cstr1.equals("null")){
-            fff = whole+one+cstr1+"&"+two+afId+"&"+three+main_id+"&"+four+paket+"&"+five+androidVersion+"&"+six+"naming";
+        if (!tysduauasdusd.equals("null")){
+            fff = whole+rsyudysdyuyuds+tysduauasdusd+"&"+psoosdosdo+afId+"&"+rstadyydys+vjsodaisdiisd+"&"+psododoassdo+rsaydhjsdjjs+"&"+tshdhsdh+androidVersion+"&"+podiidaisi+"naming";
         }
 
         else{
-            fff = whole+one+dlnk1+"&"+two+afId+"&"+three+main_id+"&"+four+paket+"&"+five+androidVersion+"&"+six+"deeporg";
+            fff = whole+rsyudysdyuyuds+psoadosdksdk+"&"+psoosdosdo+afId+"&"+rstadyydys+vjsodaisdiisd+"&"+psododoassdo+rsaydhjsdjjs+"&"+tshdhsdh+androidVersion+"&"+podiidaisi+"deeporg";
         }
 
 
@@ -293,7 +295,7 @@ public class RealActDelux extends AppCompatActivity {
 
 
 
-        if (requestCode != FILECHOOSER_RESULTCODE || mFilePathCallback == null) {
+        if (requestCode != RDTSYFYDFYFYSDYF || rtddyuusufusudf == null) {
             super.onActivityResult(requestCode, resultCode, data);
             return;
         }
@@ -304,8 +306,8 @@ public class RealActDelux extends AppCompatActivity {
         if (resultCode == Activity.RESULT_OK) {
             if (data == null || data.getData() == null) {
                 // if there is not data, then we may have taken a photo
-                if (mCameraPhotoPath != null) {
-                    results = new Uri[]{Uri.parse(mCameraPhotoPath)};
+                if (bhidfoslsfdlfds != null) {
+                    results = new Uri[]{Uri.parse(bhidfoslsfdlfds)};
                 }
             } else {
                 String dataString = data.getDataString();
@@ -315,15 +317,15 @@ public class RealActDelux extends AppCompatActivity {
             }
         }
 
-        mFilePathCallback.onReceiveValue(results);
-        mFilePathCallback = null;
+        rtddyuusufusudf.onReceiveValue(results);
+        rtddyuusufusudf = null;
 
     }
 
     @Override
     public void onBackPressed() {
-        if (viewMainMain.canGoBack()) {
-            viewMainMain.goBack();
+        if (trfdstdfuusdfuf.canGoBack()) {
+            trfdstdfuusdfuf.goBack();
         } else {
             super.onBackPressed();
         }

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_deluxe"
+    android:background="@drawable/bg_deluxe"
     tools:context=".deluxewhite.ResDeluxeActivity">
 
     <ImageView
@@ -15,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/deluxe_item" />
+        app:srcCompat="@drawable/main_deluxe" />
 
     <TextView
         android:id="@+id/tv_res_deluxe"
@@ -35,7 +35,9 @@
         android:id="@+id/b_deluxe_retry"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="Try More"
+        android:text="Try Again"
+        android:textStyle="bold"
+        android:backgroundTint="@color/pb_del_clr"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
