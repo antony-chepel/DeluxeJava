@@ -39,10 +39,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class RealActDelux extends AppCompatActivity {
-    private static final String HUDIFISIDF = RealActDelux.class.getSimpleName();
-    private static final int RDTSYFYDFYFYSDYF = 1;
+
     private ValueCallback<Uri> ksidooasdosd;
     private Uri dlsdofofdpsfdp = null;
+
+    private static final String HUDIFISIDF = RealActDelux.class.getSimpleName();
+    private static final int RDTSYFYDFYFYSDYF = 1;
 
 
     private ValueCallback<Uri[]> rtddyuusufusudf;
@@ -108,7 +110,6 @@ public class RealActDelux extends AppCompatActivity {
 
                 if(trfdstdfuusdfuf.getProgress() == 100) {
                     trfdstdfuusdfuf.setVisibility(View.VISIBLE);
-//                    animationView.setVisibility(View.INVISIBLE);
                     osdppdasppdasdp(url);
                 }
             }
@@ -184,7 +185,6 @@ public class RealActDelux extends AppCompatActivity {
                 return true;
             }
 
-            // creating image files (Lollipop only)
             private File tsrdasydsajsdajsd() throws IOException {
 
                 File giuidsiadsi = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES), "DirectoryNameHere");
@@ -198,7 +198,6 @@ public class RealActDelux extends AppCompatActivity {
                 return giuidsiadsi;
             }
 
-            // openFileChooser for Android 3.0+
             public void ldfjjfdjfsdjjdf(ValueCallback<Uri> uploadMsg, String acceptType) {
                 ksidooasdosd = uploadMsg;
 
@@ -290,6 +289,8 @@ public class RealActDelux extends AppCompatActivity {
         return sp_p.getString("SAVED_URL", fff);
     }
 
+
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
@@ -300,24 +301,22 @@ public class RealActDelux extends AppCompatActivity {
             return;
         }
 
-        Uri[] results = null;
+        Uri[] hsadyyasdys = null;
 
-        // check that the response is a good one
         if (resultCode == Activity.RESULT_OK) {
             if (data == null || data.getData() == null) {
-                // if there is not data, then we may have taken a photo
                 if (bhidfoslsfdlfds != null) {
-                    results = new Uri[]{Uri.parse(bhidfoslsfdlfds)};
+                    hsadyyasdys = new Uri[]{Uri.parse(bhidfoslsfdlfds)};
                 }
             } else {
                 String dataString = data.getDataString();
                 if (dataString != null) {
-                    results = new Uri[]{Uri.parse(dataString)};
+                    hsadyyasdys = new Uri[]{Uri.parse(dataString)};
                 }
             }
         }
 
-        rtddyuusufusudf.onReceiveValue(results);
+        rtddyuusufusudf.onReceiveValue(hsadyyasdys);
         rtddyuusufusudf = null;
 
     }

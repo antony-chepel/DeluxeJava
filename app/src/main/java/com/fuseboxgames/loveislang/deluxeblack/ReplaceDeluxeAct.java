@@ -23,7 +23,7 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
     public static final String LDOSFKFDKKDF = "cstR1";
     private static final String RTDSJJDSJJDSJA = "DkUz92ReUG3rBQni5Vvo2W";
 
-    String stMain;
+    String kdsfofsdodfos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,16 +57,6 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
         }
     }
 
-
-
-    public void osdpdsksdksakkd() {
-
-        Intent intent = new Intent(ReplaceDeluxeAct.this, FilterDeluxe.class);
-        startActivity(intent);
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
-        finish();
-    }
-
     public void ttsduusdjsdjsdj() {
         AppsFlyerConversionListener conversionListener = new AppsFlyerConversionListener() {
 
@@ -77,17 +67,18 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
                 Log.d("TESTING_ZONE", "af stat is " + conversionData.get("af_status"));
                 String status = (String) conversionData.get("af_status");
                 if (Objects.equals(status, "Organic")) {
-                    stMain = "null";
+                    kdsfofsdodfos = "null";
                 } else {
-                    stMain = (String) conversionData.get("campaign");
+                    kdsfofsdodfos = (String) conversionData.get("campaign");
                 }
-                Hawk.put(LDOSFKFDKKDF, stMain);
-                Log.d("NAMING TEST", "campaign attributed: " + stMain);
+                Hawk.put(LDOSFKFDKKDF, kdsfofsdodfos);
+                Log.d("NAMING TEST", "campaign attributed: " + kdsfofsdodfos);
             }
 
 
             @Override
             public void onConversionDataFail(String errorMessage) {
+                kdsfofsdodfos = "null";
             }
 
             @Override
@@ -104,5 +95,12 @@ public class ReplaceDeluxeAct extends AppCompatActivity {
         AppsFlyerLib.getInstance().start(this);
         AppsFlyerLib.getInstance().setDebugLog(true);
 
+    }
+    public void osdpdsksdksakkd() {
+
+        Intent intent = new Intent(ReplaceDeluxeAct.this, FilterDeluxe.class);
+        startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+        finish();
     }
 }
